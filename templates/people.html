@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  </head>
+  <body class="bg-gray-100">
+    {% include 'partials/_header.html' %}
+    <div class="container mx-auto mt-8 min-h-screen">
+    <form action="/people" method="get">
+      <input type="text" name="search" placeholder="Search People" value="{{ search_query }}">
+      <button type="submit">Search</button>
+    </form>
+    <div class="grid grid-cols-3 gap-4">
+      {% for person in people %}
+        <div class="card bg-white p-4 shadow-lg rounded-lg">
+          <img src="{{ person.image_url }}" alt="{{ person.name }}" class="w-full h-48 object-cover mb-4">
+          <h2 class="text-xl font-bold mb-2">{{ person.name }}</h2>
+          <p>Height: {{ person.height }}</p>
+          <p>Mass: {{ person.mass }}</p>
+          <p>Hair Color: {{ person.hair_color }}</p>
+          <!-- Add more attributes here -->
+        </div>
+      {% endfor %}
+    </div>
+    </div>
+    {% include 'partials/_footer.html' %}
+  </body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  </head>
+  <body class="bg-gray-100">
+    {% include 'partials/_header.html' %}
+    <div class="container mx-auto mt-8 min-h-screen">
+      <div class="grid grid-cols-3 gap-4">
+        {% for vehicle in vehicles %}
+          <div class="card bg-white p-4 shadow-lg rounded-lg">
+            <h2 class="text-xl font-bold mb-2">{{ vehicle.name }}</h2>
+            <p>Model: {{ vehicle.model }}</p>
+            <p>Manufacturer: {{ vehicle.manufacturer }}</p>
+            <p>Cost in Credits: {{ vehicle.cost_in_credits }}</p>
+            <img src="{{ vehicle.image_url }}" alt="{{ vehicle.name }}" class="w-full h-48 object-cover mb-4">
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+    {% include 'partials/_footer.html' %}
+  </body>
+</html>

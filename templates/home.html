@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  </head>
+  <body class="bg-gray-100">
+    {% include 'partials/_header.html' %}
+    <div class="container mx-auto mt-8 min-h-screen text-center">
+      <h1>Welcome to the Star Wars API Explorer</h1>
+      <form action="/search" method="get">
+        <input type="text" name="search" placeholder="Search People, Planets, Starships, Vehicles" class="text-black">
+        <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Search</button>
+      </form>
+      <div class="mt-8 flex justify-center flex-wrap gap-4">
+        <button onclick="location.href='/people'" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">People</button>
+        <button onclick="location.href='/planets'" class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">Planets</button>
+        <button onclick="location.href='/starships'" class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">Starships</button>
+        <button onclick="location.href='/vehicles'" class="bg-yellow-500 hover:bg-yellow-700 text-white font-bold py-2 px-4 rounded">Vehicles</button>
+        <button onclick="location.href='/species'" class="bg-purple-500 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded">Species</button>
+      </div>
+    </div>
+   {% include 'partials/_footer.html' %}
+  </body>
+</html>
